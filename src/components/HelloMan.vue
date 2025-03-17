@@ -36,7 +36,7 @@
 export default {
     name: 'VueDemo',
 
-    // Data: estado do componente
+    // data: control de estado do componente. serve para delimitar o estado inicial das variaveis 
     data() {
         return {
             title: 'Aprendendo Vue ',
@@ -47,11 +47,11 @@ export default {
                 { text: 'Criar um componente', completed: false },
                 { text: 'Entender reatividade', completed: false }
             ],
-            newTask: ''
+            newTask: '',
         }
     },
 
-    // Methods: funções que podem ser chamadas no template
+    // methods: funções que podem ser chamadas, ou seja, vao estar disponiveis publicamente para o template
     methods: {
         incrementCounter() {
             this.counter++
@@ -75,7 +75,7 @@ export default {
         }
     },
 
-    // Computed: propriedades calculadas com base no estado
+    // computed: propriedades que serão calculadas com base no estado inicial
     computed: {
         completedTasks() {
             return this.tasks.filter(task => task.completed).length
@@ -85,7 +85,7 @@ export default {
         }
     },
 
-    // Lifecycle hooks: métodos chamados em diferentes fases do ciclo de vida do componente
+    // lifecycle hooks: métodos chamados em diferentes fases do ciclo de vida do componente
     mounted() {
         console.log('O componente foi montado!')
     }
@@ -104,7 +104,6 @@ export default {
 
 h1 {
     color: #42b983;
-    /* Cor do Vue */
     text-align: center;
 }
 
